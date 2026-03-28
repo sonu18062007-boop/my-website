@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aggarbatti Shop - Pure Incense Sticks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">🌸 Aggarbatti Shop</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><span id="cart-count" class="cart-count">Cart (0)</span></li>
+            </ul>
+            <div class="cart-icon" onclick="toggleCart()">🛒</div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Pure & Natural Aggarbatti</h1>
+            <p>Experience divine fragrance with our handcrafted incense sticks. Perfect for pooja, meditation & home fragrance.</p>
+            <button class="cta-btn" onclick="scrollToProducts()">Shop Now</button>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <h2>Our Premium Collection</h2>
+        <div class="product-grid" id="product-grid">
+            <!-- Products populated by JS -->
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>Family-owned business crafting premium agarbatti since 1990. Made with 100% natural ingredients, no chemicals.</p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="tel" placeholder="Phone" required>
+            <textarea placeholder="Message or Call/WhatsApp: 8920139992" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cart-items"></div>
+            <div class="cart-total">
+                <strong>Total: ₹<span id="cart-total">0</span></strong>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Order</button>
+        </div>
+    </div>
+
+    <!-- Order Form Modal -->
+    <div id="order-modal" class="cart-modal">
+        <div class="cart-content">
+            <span class="close-cart" onclick="toggleOrderModal()">&times;</span>
+            <h2>Order Details</h2>
+            <div id="order-items"></div>
+            <div class="cart-total">
+                <strong>Total: ₹<span id="order-total">0</span></strong>
+            </div>
+            <form id="order-form">
+                <input type="text" id="order-name" placeholder="Full Name *" required>
+                <input type="tel" id="order-phone" placeholder="Phone Number *" required>
+                <textarea id="order-address" placeholder="Address / Delivery Details *" rows="3" required></textarea>
+                <textarea id="order-notes" placeholder="Special Notes (optional)"></textarea>
+                <button type="button" class="checkout-btn" onclick="handleOrderSubmit()">Send Order to 8920139992 📱</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Aggarbatti Shop. All rights reserved. | Made with ❤️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
